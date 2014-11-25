@@ -1,0 +1,16 @@
+{
+    "name": "gdsmith/JAK8583",
+    "description": "Generate and parse ISO 8583 transaction messages",
+    "homepage": "http://www.phpclasses.org/package/5398-PHP-Generate-and-parse-ISO-8583-transaction-messages.html",
+    "authors": [
+        {
+            "name": "Jimmi Kembaren",
+            "email": "jimmi.kembaren@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-0" : {
+            "JAK8583":"src"
+        }
+    }
+}
