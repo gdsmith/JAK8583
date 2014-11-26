@@ -311,7 +311,7 @@ class JAK8583 {
 
     //parse iso string and retrieve data element
     private function _parseData() {
-        if ($this->_data[1]=='?') {
+        if (isset($this->_data[1]) && $this->_data[1] == '?') {
             $inp	= substr($this->_iso, 4+32, strlen($this->_iso)-4-32);
         }
         else {
