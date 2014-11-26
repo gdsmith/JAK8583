@@ -457,6 +457,13 @@ class JAK8583 {
         }
     }
     
+    //method: redefine bit definition
+    public function redefineBit($bit, $type, $length, $dynamic) {
+        if ($bit>1 && $bit<129) {
+            $this->DATA_ELEMENT[$bit] = array($type, $length, $dynamic);
+        }
+    }
+
 }
 
 ?>
