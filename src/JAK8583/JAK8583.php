@@ -396,8 +396,8 @@ class JAK8583 {
 
     //method: add data element
     public function addData($bit, $data) {
-        if ($bit>1 && $bit<129) {
-            $this->_data[$bit]	= $this->_packElement($this->DATA_ELEMENT[$bit], $data);
+        if ($bit>1 && $bit<129 && $result = $this->_packElement($this->DATA_ELEMENT[$bit], $data)) {
+            $this->_data[$bit]	= $result;
             ksort($this->_data);
             $this->_calculateBitmap();
         }
