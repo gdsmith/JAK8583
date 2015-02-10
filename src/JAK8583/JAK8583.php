@@ -489,6 +489,10 @@ class JAK8583
 			ksort($this->_data);
 			$this->_calculateBitmap();
 		}
+		else
+		{
+			throw new \Exception('addData failure');
+		}
 	}
 
 	/**
