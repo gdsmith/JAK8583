@@ -483,16 +483,17 @@ class JAK8583
 	 */
 	public function addData($bit, $data)
 	{
-		if ($bit>1 && $bit<129 && $result = $this->_packElement($this->DATA_ELEMENT[$bit], $data))
-		{
-			$this->_data[$bit] = $result;
-			ksort($this->_data);
-			$this->_calculateBitmap();
-		}
-		else
-		{
+		if ($bit<1 || $bit>128)
+			throw new \Exception('addData invalid bit:'.$bit);
+
+		$result = $this->_packElement($this->DATA_ELEMENT[$bit], $data);
+
+		if (is_null($result))
 			throw new \Exception('addData failure for bit:'.$bit);
-		}
+
+		$this->_data[$bit] = $result;
+		ksort($this->_data);
+		$this->_calculateBitmap();
 	}
 
 	/**
