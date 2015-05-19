@@ -484,7 +484,7 @@ class JAK8583
 	public function addData($bit, $data)
 	{
 		if ($bit<1 || $bit>128)
-			throw new \Exception('addData invalid bit:'.$bit);
+			throw new \Exception('addData invalid bit:'.$bit.':'.$data);
 
 		$result = $this->_packElement($this->DATA_ELEMENT[$bit], $data);
 
